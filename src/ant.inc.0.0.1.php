@@ -1,5 +1,4 @@
 <?php
-error_reporting( E_ALL );
 
 /*/ // // // // // // // // // //
 Ant template v0.0.1
