@@ -1,4 +1,5 @@
 <?php
+error_reporting( E_ALL );
 
 /*/ // // // // // // // // // //
 Ant template v0.0.1
@@ -7,7 +8,7 @@ Extensible template builder with custom syntax.
 
 class ant {
 	
-	public static static 
+	public static 
 		$ver		= '0.0.1',
 		$wildcards	= array(),
 		$base	= './';
@@ -98,11 +99,18 @@ class ant {
 	public static function parse_filter(&$content){
 		$functions	= explode('|',$content);
 		$content	= '$'.array_shift($functions);
+		
+		//fix array
 		if(strpos($content, '.')!==false){ // fix array
-			$content = explode('.', $content);
-			$_content = array_shift($content);
-			foreach($content as $v){	$_content .= ($v[0]=='$') ? "[$v]" : "['$v']";	}
+			$content	= explode('.', $content);
+			$_content	= array_shift($content);
+			
+			foreach($content as $v)
+				$_content .= ($v[0]=='$') ? "[$v]" : "['$v']";
+			$content = $_content;
 		}
+		
+		//fix functions
 		foreach($functions as $function)	$content = "$function($content)";
 	}
 
