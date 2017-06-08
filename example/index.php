@@ -29,12 +29,35 @@ $data = array(
 		array('Share from anywhere', 'Do it over the cloud, from anywhere, on any device. Mochi is super fast and always available, to not only you, but all your friends'),
 		array('Use stickers and express yourself', 'Share with emoji anyone in the world. We\'ve baked them directly into Mochi. These probably won\'t help with productivity though.'),
 	),
+		
+	'footer' => array(
+		'menu' => array(
+			'Products' => array(
+				'Todo',
+				'Calendario',
+				'Email Town',
+				'Pomodorotary',
+				'ChillTower'
+			),
+			'Extras' => array(
+				'AutotuneU',
+				'Freestyler',
+				'Chillaxation'
+			),
+			'Support' => array(
+				'Online Support',
+				'Telephone Sales',
+				'Help Desk',
+				'Workshops'
+			),
+		),
+		'about' => 
+			'Shoutout to Invision team for creating the <a href="http://www.invisionapp.com/do">Do UI kit</a> that we used to fake our app screenshots. Also to the Dribbble community for providing phone mockups that look amazing.',
+	)
 );
 $_lap = microtime();
 echo ant::render_file('bootstrap.ant.tpl', $data);
 echo '<!-- LAP: '.($_lap - microtime()).' -->';
-#echo "\n";
-#print_r($data);
 
 
 ?>
