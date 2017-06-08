@@ -17,7 +17,7 @@ Añadelos a tus plantillas para generar el contenido que quieas.
 
 ## Interpretar plantillas, simple
 
-Conveirte plantillas en codigo PHP o codigo interpretado en poco tiempo.
+Convierte plantillas en codigo PHP o codigo interpretado en poco tiempo.
 
 Interpreta el contenido de una plantilla, desde un archivo o una variable.
 ```echo ant::render('ejemplo de {{variable}}', array('variable'=>'texto'));```
